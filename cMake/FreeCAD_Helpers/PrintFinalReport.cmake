@@ -126,6 +126,8 @@ macro(PrintFinalReport)
     value(BUILD_TEST)
     value(BUILD_TUX)
     value(BUILD_WEB)
+    # Add custom modules
+    value(BUILD_XMLVIEWER)
     value(CMAKE_INSTALL_PREFIX)
     value(USE_CUDA)
     value(USE_OPENCV)
