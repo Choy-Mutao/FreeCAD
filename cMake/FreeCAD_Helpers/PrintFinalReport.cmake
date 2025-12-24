@@ -128,6 +128,7 @@ macro(PrintFinalReport)
     value(BUILD_WEB)
     # Add custom modules
     value(BUILD_XMLVIEWER)
+    value(BUILD_GEOALGO)
     value(CMAKE_INSTALL_PREFIX)
     value(USE_CUDA)
     value(USE_OPENCV)

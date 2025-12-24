@@ -147,3 +147,7 @@ endif(BUILD_WEB)
 if(BUILD_XMLVIEWER)
     add_subdirectory(XmlViewer)
 endif(BUILD_XMLVIEWER)
+
+if(BUILD_GEOALGO)
+    add_subdirectory(GeometryAlgorithm)
+endif(BUILD_GEOALGO)

@@ -139,6 +139,7 @@ macro(InitializeFreeCADBuildOptions)
     option(ENABLE_DEVELOPER_TESTS "Build the FreeCAD unit tests suit" ON)
     # Add custom modules options
     option(BUILD_XMLVIEWER "Build Custom Module - Xml Viewer" ON)
+    option(BUILD_GEOALGO "Build Custom Module - GeoAlgo" ON)
 
     if(MSVC OR APPLE)
         set(FREECAD_3DCONNEXION_SUPPORT "NavLib" CACHE STRING "Select version of the 3Dconnexion device integration")
