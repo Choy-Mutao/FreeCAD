@@ -27,6 +27,8 @@
 #include <Gui/Application.h>
 #include <Gui/Command.h>
 
+#include "point.h"
+#include "pga.h"
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -53,8 +55,29 @@ void CmdGeometryAlgorithmTest::activated(int)
     Base::Console().message("Hello, World!\n");
 }
 
+DEF_STD_CMD(CmdGA_PGA_Area)
+CmdGA_PGA_Area::CmdGA_PGA_Area()
+    : Command("PGA_Area")
+{
+    sAppModule = "GeometryAlgorithm";
+    sGroup = QT_TR_NOOP("GeometryAlgorithm");
+    sMenuText = QT_TR_NOOP("PGA Area");
+    sToolTipText = QT_TR_NOOP("GeometryAlgorithm Test function");
+    sWhatsThis = "GeometryAlgorithm_Test";
+    sStatusTip = QT_TR_NOOP("GeometryAlgorithm Test function");
+    sPixmap = "GeometryAlgorithmWorkbench";
+    sAccel = "CTRL+H";
+}
+
+void CmdGA_PGA_Area::activated(int)
+{
+    double area = pga::area2D_Ancient_Triangle(pga::Point(0, 0), pga::Point(10, 0), pga::Point(0, 10));
+    Base::Console().message("Pga Area Area2D_Ancient_Triangle: %s\n",  std::to_string(area));
+}
+
 void CreateGeometryAlgorithmCommands(void)
 {
     Gui::CommandManager& rcCmdMgr = Gui::Application::Instance->commandManager();
     rcCmdMgr.addCommand(new CmdGeometryAlgorithmTest());
+    rcCmdMgr.addCommand(new CmdGA_PGA_Area());
 }

@@ -22,7 +22,8 @@ SET(GeometryAlgorithmGui_SRCS
 )
 
 add_library(GeometryAlgorithmGui SHARED ${GeometryAlgorithmGui_SRCS})
-target_link_libraries(GeometryAlgorithmGui ${GeometryAlgorithmGui_LIBS})
+target_link_libraries(GeometryAlgorithmGui pga ${GeometryAlgorithmGui_LIBS})
+
 
 SET_BIN_DIR(GeometryAlgorithmGui GeometryAlgorithmGui /Mod/GeometryAlgorithm)
 SET_PYTHON_PREFIX_SUFFIX(GeometryAlgorithmGui)

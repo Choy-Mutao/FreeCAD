@@ -42,21 +42,15 @@ Gui::MenuItem* Workbench::setupMenuBar() const
     Gui::MenuItem* root = StdWorkbench::setupMenuBar();
     Gui::MenuItem* item = root->findItem("&Windows");
 
+    // ========= pga items ==============
+    Gui::MenuItem* pga = new Gui::MenuItem;
+    pga->setCommand("PGA");
+    *pga << "PGA_Area";
+
     Gui::MenuItem* test = new Gui::MenuItem;
     root->insertItem(item, test);
     test->setCommand("GeometryAlgorithm");
-    *test << "GeometryAlgorithm_Test";
-    
-    // ========= pga items ==============
-    Gui::MenuItem* pga = new Gui::MenuItem;
-    root->insertItem(item, pga);
-    // --------- pga - area -------------
-    Gui::MenuItem* area = new Gui::MenuItem;
-    pga->insertItem(pga, area);
-    *area << "PGA_Area";
-    Gui::MenuItem* lines = new Gui::MenuItem;
-    pga->insertItem(pga, area);
-    *lines << "PGA_Lines";
+    *test << "GeometryAlgorithm_Test" << pga;
     
     return root;
 }
